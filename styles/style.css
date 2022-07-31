@@ -1,0 +1,36 @@
+
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.btn {
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.increase {
+  border-top-width: 0;
+  border-bottom-color: var(--color);
+  border-bottom-width: 20px;
+}
+
+.decrease {
+  border-top-color: var(--color);
+  border-bottom-width: 0;
+  border-top-width: 20px;
+}
+
+.counter {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--color);
+}

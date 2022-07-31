@@ -1,0 +1,4 @@
+counter at the center of the page shows a zero
+two buttons above and below it
+they increase and decrease the counter respectively
+counter does not go below zero
