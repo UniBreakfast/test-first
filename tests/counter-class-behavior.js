@@ -1,3 +1,4 @@
+import '../classes/event-target.js'
 import { Counter } from '../classes/counter-class.js' 
 
 testCounterClass()
@@ -6,12 +7,12 @@ function testCounterClass() {
   testIfCounterShowsValue()
   testIfCounterStartsAtZero()
   testIfCounterStartsAtArgValue()
-  testIfCounterIncreasesByOne()
-  testIfCounterDecreasesByOne()
+  testIfCounterIncrementsByOne()
+  testIfCounterDecrementsByOne()
   testIfCounterStopsAtZero()
   testIfCounterResets()
-  testIfCounterGeneratesEventOnIncrease()
-  testIfCounterGeneratesEventOnDecrease()
+  testIfCounterGeneratesEventOnIncrement()
+  testIfCounterGeneratesEventOnDecrement()
   testIfCounterGeneratesEventOnChange()
 }
 
@@ -39,31 +40,31 @@ function testIfCounterStartsAtArgValue() {
   else console.log('HALT! Counter does not start at 10 if passed 10!')
 }
 
-// counter should increase by one
-function testIfCounterIncreasesByOne() {
+// counter should increment by one
+function testIfCounterIncrementsByOne() {
   const counter = new Counter()
 
-  counter.increase()
+  counter.increment()
 
-  if (counter.value === 1) console.log('Counter increases by one')
-  else console.log('HALT! Counter does not increase by one!')
+  if (counter.value === 1) console.log('Counter increments by one')
+  else console.log('HALT! Counter does not increment by one!')
 }
 
-// counter should decrease by one
-function testIfCounterDecreasesByOne() {
+// counter should decrement by one
+function testIfCounterDecrementsByOne() {
   const counter = new Counter(5)
 
-  counter.decrease()
+  counter.decrement()
 
-  if (counter.value === 4) console.log('Counter decreases by one')
-  else console.log('HALT! Counter does not decrease by one!')
+  if (counter.value === 4) console.log('Counter decrements by one')
+  else console.log('HALT! Counter does not decrement by one!')
 }
 
 // counter should stop at zero
 function testIfCounterStopsAtZero() {
   const counter = new Counter()
 
-  counter.decrease()
+  counter.decrement()
 
   if (counter.value === 0) console.log('Counter stops at zero')
   else console.log('HALT! Counter does not stop at zero!')
@@ -77,4 +78,44 @@ function testIfCounterResets() {
 
   if (counter.value === 0) console.log('Counter resets to zero')
   else console.log('HALT! Counter does not reset to zero!')
+}
+
+// counter should generate event on increment
+function testIfCounterGeneratesEventOnIncrement() {
+  const counter = new Counter()
+  let eventFired = false
+
+  counter.addEventListener('increment', () => eventFired = true)
+
+  counter.increment()
+
+  if (eventFired) console.log('Counter generates event on increment')
+  else console.log('HALT! Counter does not generate event on increment!')
+}
+
+// counter should generate event on decrement
+function testIfCounterGeneratesEventOnDecrement() {
+  const counter = new Counter(5)
+  let eventFired = false
+
+  counter.addEventListener('decrement', () => eventFired = true)
+
+  counter.decrement()
+
+  if (eventFired) console.log('Counter generates event on decrement')
+  else console.log('HALT! Counter does not generate event on decrement!')
+}
+
+// counter should generate event on change
+function testIfCounterGeneratesEventOnChange() {
+  const counter = new Counter()
+  let eventFiredCount = 0
+
+  counter.addEventListener('change', () => eventFiredCount++)
+
+  counter.increment()
+  counter.decrement()
+
+  if (eventFiredCount == 2) console.log('Counter generates event on change')
+  else console.log('HALT! Counter does not generate event on change!')
 }

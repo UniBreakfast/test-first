@@ -17,13 +17,13 @@
   border-color: transparent;
 }
 
-.increase {
+.increment {
   border-top-width: 0;
   border-bottom-color: var(--color);
   border-bottom-width: 20px;
 }
 
-.decrease {
+.decrement {
   border-top-color: var(--color);
   border-bottom-width: 0;
   border-top-width: 20px;

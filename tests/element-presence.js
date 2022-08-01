@@ -2,8 +2,8 @@ runAllTests()
 
 function runAllTests() {
   testCounterPresence()
-  testIncreaseButtonPresence()
-  testDecreaseButtonPresence()
+  testIncrementButtonPresence()
+  testDecrementButtonPresence()
 }
 
 // it should have a class 'counter' and a value of 0 inside of it
@@ -14,18 +14,18 @@ function testCounterPresence() {
   else console.log('HALT! No counter found!') 
 }
 
-// it should have classes 'btn' and 'increase'
-function testIncreaseButtonPresence() {
-  const increaseBtn = document.querySelector('button.btn.increase')
+// it should have classes 'btn' and 'increment'
+function testIncrementButtonPresence() {
+  const incrementBtn = document.querySelector('button.btn.increment')
 
-  if (increaseBtn) console.log('Increase button present')
-  else console.log('HALT! No increase button found!') 
+  if (incrementBtn) console.log('Increment button present')
+  else console.log('HALT! No increment button found!') 
 }
 
-// it should have classes 'btn' and 'decrease'
-function testDecreaseButtonPresence() {
-  const decreaseBtn = document.querySelector('button.btn.decrease')
+// it should have classes 'btn' and 'decrement'
+function testDecrementButtonPresence() {
+  const decrementBtn = document.querySelector('button.btn.decrement')
 
-  if (decreaseBtn) console.log('Decrease button present')
-  else console.log('HALT! No decrease button found!') 
+  if (decrementBtn) console.log('Decrement button present')
+  else console.log('HALT! No decrement button found!') 
 }
