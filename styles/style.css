@@ -17,16 +17,36 @@
   border-color: transparent;
 }
 
+.increment, .decrement {
+  width: 0;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+
 .increment {
+  top: -25px;
   border-top-width: 0;
   border-bottom-color: var(--color);
   border-bottom-width: 20px;
 }
 
 .decrement {
+  bottom: -25px;
   border-top-color: var(--color);
   border-bottom-width: 0;
   border-top-width: 20px;
+}
+
+.reset {
+  position: absolute;
+  right: -40px;
+  bottom: 50%;
+  transform: translateY(50%);
+  border: 2px solid var(--color);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }
 
 .counter {
